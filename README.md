@@ -6,7 +6,7 @@ Permite definir la estructura de navegacion de un proyecto basado en un objeto (
 
 Codigo ejemplo: [codigo](./example):
 
-Aplicacion ejemplo: [online](http://yracnte.github.io/react-router-nav/):
+Aplicacion ejemplo: [online](http://yracnte.github.io/react-config-nav/):
 
 ## Configuracion basica
 

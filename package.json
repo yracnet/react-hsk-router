@@ -1,14 +1,13 @@
 {
-  "name": "react-router-nav",
+  "name": "react-config-nav",
   "version": "0.1.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "private": false,
   "author": "Willyams Yujra <yracnet@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yracnet/react-router-nav"
+    "url": "https://github.com/yracnet/react-config-nav"
   },
   "peerDependencies": {
     "react": "^17.0.2",

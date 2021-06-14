@@ -1,5 +1,5 @@
 import React from "react"
-import { NavContainer } from "react-router-nav"
+import { NavContainer } from "react-config-nav"
 import { PageContainer, MainContainer } from "./Container"
 import { Component as About } from './about'
 import { Component as Product } from './products'

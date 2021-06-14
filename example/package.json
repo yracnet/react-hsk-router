@@ -1,8 +1,8 @@
 {
-  "name": "react-router-nav-example",
+  "name": "react-config-nav-example",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yracnet.github.io/react-router-nav",
+  "homepage": "https://yracnet.github.io/react-config-nav",
   "dependencies": {
     "@testing-library/jest-dom": "link:../node_modules/@testing-library/jest-dom",
     "@testing-library/react": "link:../node_modules/@testing-library/react",
@@ -11,7 +11,7 @@
     "react": "link:../nde_modules/react",
     "react-dom": "link:../nde_modules/react-dom",
     "react-router-dom": "link:../nde_modules/react-router-dom",
-    "react-router-nav": "link:..",
+    "react-config-nav": "link:..",
     "react-scripts": "link:../nde_modules/react-scripts",
     "web-vitals": "link:../nde_modules/web-vitals"
   },

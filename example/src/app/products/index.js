@@ -1,5 +1,5 @@
 import React from "react"
-import { NavContainer } from "react-router-nav"
+import { NavContainer } from "react-config-nav"
 import { NotFound } from "./NotFound"
 import { NotDefined } from "./NotDefined"
 import { Product1 } from './Product1'

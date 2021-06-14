@@ -1,5 +1,5 @@
 import React from "react"
-import { NavContainer } from "react-router-nav"
+import { NavContainer } from "react-config-nav"
 import { Service1 } from './Service1'
 import { Service2 } from './Service2'
 

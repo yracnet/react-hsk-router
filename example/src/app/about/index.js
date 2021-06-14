@@ -1,5 +1,5 @@
 import React from "react"
-import { NavContainer } from "react-router-nav"
+import { NavContainer } from "react-config-nav"
 import { History } from './History'
 import { Mission } from './Mission'
 
