@@ -2,10 +2,12 @@
   "name": "react-router-nav-example",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://yracnet.github.io/react-router-nav",
   "dependencies": {
     "@testing-library/jest-dom": "link:../node_modules/@testing-library/jest-dom",
     "@testing-library/react": "link:../node_modules/@testing-library/react",
     "@testing-library/user-event": "link:../node_modules/@testing-library/user-event",
+    "gh-pages": "^3.2.0",
     "react": "link:../nde_modules/react",
     "react-dom": "link:../nde_modules/react-dom",
     "react-router-dom": "link:../nde_modules/react-router-dom",
@@ -17,7 +19,8 @@
     "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
     "build": "node ../node_modules/react-scripts/bin/react-scripts.js build",
     "test": "node ../node_modules/react-scripts/bin/react-scripts.js test",
-    "eject": "node ../node_modules/react-scripts/bin/react-scripts.js eject"
+    "eject": "node ../node_modules/react-scripts/bin/react-scripts.js eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
