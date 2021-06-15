@@ -1,6 +1,5 @@
 import React, { FC } from 'react'
-import { useLocation } from 'react-router-dom'
-import { NavLink } from './Link'
+import { NavLink, useLocation } from 'react-router-dom'
 import { ContainerProps } from './Container'
 
 export const NotContainer: FC<any> = ({ children }) => {

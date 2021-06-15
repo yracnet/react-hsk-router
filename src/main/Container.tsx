@@ -1,9 +1,10 @@
 import React from 'react'
-import { Switch, Route, Redirect, useLocation } from 'react-router-dom'
-import { NotContainer, NotFound, NotDefined } from './Default'
+import { Switch } from 'react-router-dom'
+import { NotContainer } from './Default'
 import { createRelative, Relative } from './Relative'
 import { NavConfig, NavItem } from './Config'
 
+import { NavRoute, NavRouteDefault } from './NavRoute'
 
 export interface ContainerProps {
     value: NavConfig;
@@ -21,12 +22,13 @@ export interface NavContainerProps {
     [prop: string]: any;
 }
 
-export const NavContainer: React.FC<NavContainerProps> = ({ container, defaultTo, ...props }) => {
+const NavContainerRaw: React.FC<NavContainerProps> = ({ container, defaultTo, ...props }) => {
     let { value, basename, notFound, notDefined } = props
     const relative = createRelative(basename)
     defaultTo = relative.path(defaultTo)
     const config: NavConfig = relative.config(value);
     const Container = container || NotContainer
+    //const Container = React.memo(ContainerRaw, areEqualContainer)
     return (
         <Relative.Provider value={relative}>
             <Container key="container" {...props} value={config} relative={value}>
@@ -40,44 +42,19 @@ export const NavContainer: React.FC<NavContainerProps> = ({ container, defaultTo
 }
 
 
-export interface NavRouteProps {
-    path?: string;
-    exact?: boolean;
-    strict?: boolean;
-    sensitive?: boolean;
-    component?: React.FC<any>;
-    notDefined?: React.FC<any>;
-    [prop: string]: any;
+const areEqualNavContainer = (a: NavContainerProps, b: NavContainerProps) => {
+    //console.log('areEqualNavContainer--->', a, b);
+    return a.value === b.value &&
+        a.basename === b.basename &&
+        a.defaultTo === b.defaultTo &&
+        a.container === b.container &&
+        a.notFound === b.notFound &&
+        a.notDefined === b.notDefined;
 }
-
-export const NavRoute: React.FC<NavRouteProps> = (props) => {
-    const { path, exact, strict, sensitive, component, notDefined, ...others } = props
-    const DefaultContent = component || notDefined || NotDefined
-    return <Route path={path}
-        exact={exact}
-        sensitive={sensitive}
-        strict={strict}
-        component={() => <DefaultContent basename={path} {...others} />}
-    />
-}
-
-export interface NavRouteDefaultProps {
-    redirectTo?: string;
-    content?: React.FC<any>;
-    [prop: string]: any;
-}
+export const NavContainer = React.memo(NavContainerRaw, areEqualNavContainer)
 
 
-const NavRouteDefault: React.FC<NavRouteDefaultProps> = ({ redirectTo, content, ...props }) => {
-    const { pathname } = useLocation();
-    if (redirectTo === pathname) {
-        redirectTo = undefined;
-    }
-    const DefaultContent = content || NotFound
-    return (
-        <Route {...props}>
-            <DefaultContent />
-            {redirectTo !== undefined && <Redirect to={redirectTo} />}
-        </Route>
-    )
-}
+//const areEqualContainer = (a: ContainerProps, b: ContainerProps) => {
+//    console.log('areEqualContainer--->', a, b);
+//    return true;
+//}

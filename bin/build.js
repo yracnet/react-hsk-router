@@ -17,10 +17,10 @@ const { exec } = require('child_process');
 
 const webpackCompile = () => {
     const config = configFactory('production');
-    config.entry = paths.appSrc + "/index.tsx";
+    config.entry = paths.appSrc + '/module.tsx';
     config.output = {
         path: paths.appBuild,
-        filename: 'index.js',
+        filename: 'module.js',
         library: pkg.name,
         //var, assign, this, window, self, global, commonjs, commonjs2, commonjs-module, amd, amd-require, umd, umd2, jsonp, syste, 
         libraryTarget: "umd"
@@ -54,7 +54,7 @@ const webpackCompile = () => {
 }
 
 const generateDeclarationOnly = () => {
-    exec('npx tsc -d --declarationDir ./dist --emitDeclarationOnly', (err, stdout, stderr) => {
+    exec('npx tsc -d --declarationDir ./dist --emitDeclarationOnly --noEmit false', (err, stdout, stderr) => {
         console.log('Generate DeclarationOnly', err, stdout, stderr);
     });
 

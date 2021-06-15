@@ -14,19 +14,4 @@ export interface NavContainerProps {
     notDefined?: React.FC<any>;
     [prop: string]: any;
 }
-export declare const NavContainer: React.FC<NavContainerProps>;
-export interface NavRouteProps {
-    path?: string;
-    exact?: boolean;
-    strict?: boolean;
-    sensitive?: boolean;
-    component?: React.FC<any>;
-    notDefined?: React.FC<any>;
-    [prop: string]: any;
-}
-export declare const NavRoute: React.FC<NavRouteProps>;
-export interface NavRouteDefaultProps {
-    redirectTo?: string;
-    content?: React.FC<any>;
-    [prop: string]: any;
-}
+export declare const NavContainer: React.NamedExoticComponent<NavContainerProps>;
