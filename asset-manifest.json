@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/react-hsk-router/static/js/main.dfec03cd.chunk.js",
+    "main.js.map": "/react-hsk-router/static/js/main.dfec03cd.chunk.js.map",
+    "runtime-main.js": "/react-hsk-router/static/js/runtime-main.bada84ad.js",
+    "runtime-main.js.map": "/react-hsk-router/static/js/runtime-main.bada84ad.js.map",
+    "static/js/2.29460981.chunk.js": "/react-hsk-router/static/js/2.29460981.chunk.js",
+    "static/js/2.29460981.chunk.js.map": "/react-hsk-router/static/js/2.29460981.chunk.js.map",
+    "index.html": "/react-hsk-router/index.html",
+    "static/js/2.29460981.chunk.js.LICENSE.txt": "/react-hsk-router/static/js/2.29460981.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bada84ad.js",
+    "static/js/2.29460981.chunk.js",
+    "static/js/main.dfec03cd.chunk.js"
+  ]
+}
