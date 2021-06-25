@@ -1,17 +1,16 @@
 {
-  "name": "react-config-nav",
-  "version": "0.1.1",
+  "name": "react-hsk-router",
+  "version": "0.1.0",
   "main": "dist/module.js",
   "types": "dist/module.d.ts",
   "author": "Willyams Yujra <yracnet@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yracnet/react-config-nav"
+    "url": "https://github.com/yracnet/react-hsk-router"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^17.0.0",
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
@@ -25,6 +24,7 @@
     "@types/react-router-dom": "^5.1.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-inspector": "^5.1.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "typescript": "^4.1.2",
@@ -32,10 +32,9 @@
     "webpack-node-externals": "^3.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start:app": "react-scripts start",
     "build": "node bin/build.js",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
@@ -60,6 +59,7 @@
     "router",
     "navegation",
     "container",
+    "wrapper",
     "component"
   ]
 }

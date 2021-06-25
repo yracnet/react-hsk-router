@@ -1,11 +1,14 @@
-import { NavLink } from 'react-router-dom'
+import { ObjectInspector } from 'react-inspector'
+import { useRelative, NavLink } from 'react-hsk-router'
 
-export const MainContainer = (props) => {
-    const { children, value = [] } = props
+export const MainContainer = ({ children }) => {
+    const { current } = useRelative();
+    const random = Math.random();
     return (
         <div className="container">
             <nav className="my-2 my-md-0 mr-md-3">
-                {value.map(it => (
+                {current.title}
+                {current.views.map(it => (
                     <NavLink key={it.path}
                         to={it.path}
                         exact={it.exact}
@@ -21,25 +24,28 @@ export const MainContainer = (props) => {
             </div>
             <code className="small">
                 <b>Main Container</b>
-                <pre>{JSON.stringify(value, null, 2)}</pre>
+                <ObjectInspector name="current" data={current} />
+                <i>{random}</i>
             </code>
         </div>
     )
 }
-export const PageContainer = (props) => {
-    const { value = [], children } = props
+export const PageContainer = ({ children }) => {
+    const { current } = useRelative();
+    const random = Math.random();
     return (
         <div>
-
             <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-                <h5 className="my-0 mr-md-auto font-weight-normal">Company name</h5>
+                <h5 className="my-0 mr-md-auto font-weight-normal">
+                    {current.title || current.path}
+                </h5>
                 <nav className="my-2 my-md-0 mr-md-3">
-                    {value.map(it => (
+                    {current.views.map(it => (
                         <NavLink key={it.path}
-                            to={it.path}
+                            to={it.uri}
                             exact={it.exact}
                             className="p-2 text-dark">
-                            {it.title}
+                            {it.title || it.path}
                         </NavLink>
                     ))}
                 </nav>
@@ -54,7 +60,8 @@ export const PageContainer = (props) => {
 
             <code className="small">
                 <b>Page Container</b>
-                <pre>{JSON.stringify(value, null, 2)}</pre>
+                <ObjectInspector name="current" data={current} />
+                <i>{random}</i>
             </code>
 
             <div className="container">
@@ -108,6 +115,25 @@ export const TabContainer = (props) => {
             <div className="tab-content">
                 {children}
             </div>
+        </div>
+    )
+}
+
+export const WrapElement = (props) => {
+    const { children, ...items } = props
+    const json = JSON.stringify(items, null, 2)
+    return (
+        <div>
+            WRAPPER
+            <hr className="m-0" />
+            {children}
+            <hr className="m-0" />
+            <code style={{ textAlign: 'left' }}>
+                <b>Wrap Element</b>
+                <pre>
+                    {json}
+                </pre>
+            </code>
         </div>
     )
 }

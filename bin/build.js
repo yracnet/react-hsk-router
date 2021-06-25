@@ -14,6 +14,11 @@ const nodeExternals = require('webpack-node-externals');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { exec } = require('child_process');
 
+const deleteDist = () => {
+    if (fs.existsSync(paths.appBuild)) {
+        fs.rmSync(paths.appBuild, { recursive: true });
+    }
+}
 
 const webpackCompile = () => {
     const config = configFactory('production');
@@ -29,9 +34,6 @@ const webpackCompile = () => {
     config.optimization.splitChunks = undefined
     config.optimization.runtimeChunk = undefined
     config.externals = [nodeExternals()]
-    if (fs.existsSync(paths.appBuild)) {
-        fs.rmSync(paths.appBuild, { recursive: true });
-    }
     const pluginsIgnore = ['HtmlWebpackPlugin', 'ManifestPlugin']
     config.plugins = config.plugins
         .filter(it => {
@@ -57,7 +59,8 @@ const generateDeclarationOnly = () => {
     exec('npx tsc -d --declarationDir ./dist --emitDeclarationOnly --noEmit false', (err, stdout, stderr) => {
         console.log('Generate DeclarationOnly', err, stdout, stderr);
     });
-
 }
+
+//deleteDist();
 webpackCompile();
 generateDeclarationOnly();

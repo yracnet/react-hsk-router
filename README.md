@@ -6,7 +6,7 @@ Permite definir la estructura de navegacion de un proyecto basado en un objeto (
 
 Codigo ejemplo: [codigo](./example):
 
-Aplicacion ejemplo: [online](http://yracnet.github.io/react-config-nav/):
+Aplicacion ejemplo: [online](http://yracnet.github.io/react-hsk-router/):
 
 ## Configuracion basica
 
@@ -33,11 +33,11 @@ La ruta **path** es relativa al directorio.
 
 ### Componente de Navegacion
 
-Utilice el componente **NavContainer** para renderizar los componentes.
+Utilice el componente **RenderRoute** para renderizar los componentes.
 
 ```javascript:./example/src/app/about/index.js
 export const AboutComponent = (props) => (
-    <NavContainer {...props}
+    <RenderRoute {...props}
                   value={routes}
                   defaultTo="/history" />
 )
@@ -48,7 +48,7 @@ Adicionalmente permite envolver los componentes definidos en **routers** con el 
 
 ```javascript:./example/src/app/about/index.js
 export const AboutComponent = (props) => (
-    <NavContainer {...props}
+    <RenderRoute {...props}
                   value={routes}
                   container={AppContainer}
                   notFound={NotFound}

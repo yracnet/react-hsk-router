@@ -2,6 +2,8 @@ example/*
 public/*
 src/*
 bin/*
+dist/index.d.ts
+dist/example/*
 .*.swp
 ._*
 .DS_Store

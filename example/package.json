@@ -1,19 +1,19 @@
 {
-  "name": "react-config-nav-example",
+  "name": "react-hsk-router-example",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yracnet.github.io/react-config-nav",
+  "homepage": "https://yracnet.github.io/react-hsk-router",
   "dependencies": {
     "@testing-library/jest-dom": "link:../node_modules/@testing-library/jest-dom",
     "@testing-library/react": "link:../node_modules/@testing-library/react",
     "@testing-library/user-event": "link:../node_modules/@testing-library/user-event",
     "gh-pages": "^3.2.0",
-    "react": "link:../nde_modules/react",
-    "react-dom": "link:../nde_modules/react-dom",
-    "react-router-dom": "link:../nde_modules/react-router-dom",
-    "react-config-nav": "link:..",
-    "react-scripts": "link:../nde_modules/react-scripts",
-    "web-vitals": "link:../nde_modules/web-vitals"
+    "react": "link:../node_modules/react",
+    "react-dom": "link:../node_modules/react-dom",
+    "react-router-dom": "link:../node_modules/react-router-dom",
+    "react-hsk-router": "link:..",
+    "react-scripts": "link:../node_modules/react-scripts",
+    "web-vitals": "link:../node_modules/web-vitals"
   },
   "scripts": {
     "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
