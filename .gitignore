@@ -12,6 +12,8 @@
 # production
 /build
 /example/build
+/dist/index.d.ts
+/dist/example/*
 
 # misc
 .DS_Store
