@@ -1,5 +1,5 @@
-/// <reference types="react" />
 import { Item } from "./config";
+import React from "react";
 export interface RouteRule {
     key: string;
     path: string;
@@ -27,4 +27,4 @@ export interface RouteItem {
     items: RouteConfig;
 }
 export declare type RouteConfig = RouteItem[];
-export declare const getRouteItem: (item: Item, basename: string, index?: number) => RouteItem;
+export declare const getRouteItem: (item: Item, basename: string, index?: number, wrapper?: React.FC<{}> | undefined) => RouteItem;

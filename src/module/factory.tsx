@@ -1,6 +1,7 @@
 import { Config, Item } from "./config";
-import { NotContainer, NotDefined, NotFound } from "./container";
+import { NotContainer, NotDefined, NotFound, NotWrapper } from "./container";
 import assert from "./assert";
+import React from "react";
 
 export interface RouteRule {
     key: string;
@@ -11,7 +12,6 @@ export interface RouteRule {
 }
 
 export interface RouteDefine {
-    //relative: boolean;
     container: React.FC;
     notFound: React.FC;
     component: React.FC;
@@ -35,11 +35,11 @@ export interface RouteItem {
 
 export type RouteConfig = RouteItem[];
 
-const getRouteConfig = (items: Config = [], basename: string): RouteConfig => {
-    return items.map((item, ix) => getRouteItem(item, basename, ix + 1))
+const getRouteConfig = (items: Config = [], basename: string, wrapper?: React.FC): RouteConfig => {
+    return items.map((item, ix) => getRouteItem(item, basename, ix + 1, wrapper))
 }
 
-export const getRouteItem = (item: Item, basename: string, index: number = 1): RouteItem => {
+export const getRouteItem = (item: Item, basename: string, index: number = 1, wrapper?: React.FC): RouteItem => {
     let {
         path, exact, strict, sensitive,
         component, defaultTo, children, container, notFound, notDefined,
@@ -49,7 +49,7 @@ export const getRouteItem = (item: Item, basename: string, index: number = 1): R
     const routePath = path = assert.path(path);
     const routeURI = assert.join(basename, path);
     const routeTo = assert.join(routeURI, defaultTo);
-    const routeItems = getRouteConfig(children, routeURI);
+    const routeItems = getRouteConfig(children, routeURI, item.wrapper);
     const mode = routeItems.length > 0 ? 'recursive' : relative ? 'relative' : 'simple'
     const rule: RouteRule = {
         key,
@@ -59,7 +59,7 @@ export const getRouteItem = (item: Item, basename: string, index: number = 1): R
         sensitive,
     }
     const define: RouteDefine = {
-        container: container || NotContainer,
+        container: container || wrapper || NotContainer,
         notFound: notFound || NotFound,
         component: component || notDefined || NotDefined,
         redirect: routeTo,

@@ -31,9 +31,9 @@ const NONE: RelativeInstance = {
         path: "",
     },
 }
-
 export const Relative = React.createContext<RelativeInstance>(NONE);
 
 export const useRelative = (): RelativeInstance => {
     return React.useContext(Relative);
 }
+

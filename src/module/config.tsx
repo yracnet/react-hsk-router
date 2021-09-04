@@ -5,17 +5,18 @@ import { getRouteItem } from "./factory";
 
 export interface Item {
     id?: string;
-    //ROUTE
+    //RULE
     path?: string;
     exact?: boolean;
     strict?: boolean;
     sensitive?: boolean;
     relative?: boolean;
+    //DEFINED
     component?: React.FC;
-    //RENDER
     container?: React.FC;
     notFound?: React.FC;
     notDefined?: React.FC;
+    wrapper?: React.FC;
     children?: Config;
     defaultTo?: string;
     [key: string]: any;

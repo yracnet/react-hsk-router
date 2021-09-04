@@ -1,10 +1,12 @@
 import React from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { useRelative } from './context'
-//@ts-ignore
-import { ObjectInspector } from 'react-inspector'
 
 export const NotContainer: React.FC<any> = ({ children }) => {
+    return children
+}
+
+export const NotWrapper: React.FC<any> = ({ children }) => {
     return children
 }
 
@@ -29,16 +31,25 @@ export const NotDefined: React.FC = () => {
     )
 }
 
-export const DebugContainer: React.FC = ({ children }) => {
-    const instance = useRelative();
-    const { current, rule } = instance
+export const WrapperContainer: React.FC = ({ children }) => {
     const random = Math.random();
     return (
+        <div className="p-2 border border-primary">
+            {children}
+            <sub>
+                Wrapper Container: {random}
+            </sub>
+        </div>
+    )
+}
+
+export const DebugContainer: React.FC = ({ children }) => {
+    const random = Math.random();
+    const instance = useRelative();
+    console.debug('DebugContainer', random, '=>', instance);
+    const { current, rule } = instance;
+    return (
         <div className="m-2">
-            <div>
-                <ObjectInspector data={instance} />
-                <i>{random}</i>
-            </div>
             <div className="card">
                 <div className="card-header">
                     <ul className="nav nav-pills">
@@ -58,8 +69,11 @@ export const DebugContainer: React.FC = ({ children }) => {
                 </div>
                 <div className="card-body">
                     {children}
+                    <sub>
+                        Debug Container: {random}
+                    </sub>
                 </div>
-            </div >
+            </div>
         </div >
     )
 }

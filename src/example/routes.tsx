@@ -1,6 +1,7 @@
 
 import { ItemRender, DebugContainer, Item } from '../module'
 import { Config } from '../module/config'
+import { WrapperContainer } from '../module/container'
 
 export const module1: Item = {
     title: "Module",
@@ -109,8 +110,9 @@ export const app: Item = {
 }
 
 export const nivel: Item = {
-    container: DebugContainer,
     defaultTo: '/n1-a',
+    container: DebugContainer,
+    wrapper: WrapperContainer,
     children: [
         {
             path: "/n1-a",
@@ -123,6 +125,7 @@ export const nivel: Item = {
         {
             path: '/n1-c',
             container: DebugContainer,
+            wrapper: WrapperContainer,
             defaultTo: '/n2-a',
             children: [
                 {
@@ -136,6 +139,7 @@ export const nivel: Item = {
                 {
                     path: '/n2-c',
                     container: DebugContainer,
+                    wrapper: WrapperContainer,
                     defaultTo: '/n3-z',
                     children: [
                         {
@@ -149,6 +153,7 @@ export const nivel: Item = {
                         {
                             path: '/n3-c',
                             container: DebugContainer,
+                            wrapper: WrapperContainer,
                             children: [
                                 {
                                     path: "/n4-a",
@@ -161,6 +166,7 @@ export const nivel: Item = {
                                 {
                                     path: '/n4-c',
                                     container: DebugContainer,
+                                    wrapper: WrapperContainer,
                                     children: [
                                         {
                                             path: "/n5-a",
@@ -173,6 +179,7 @@ export const nivel: Item = {
                                         {
                                             path: '/n5-c',
                                             container: DebugContainer,
+                                            wrapper: WrapperContainer,
                                             children: [
                                                 {
                                                     path: "/n6-a",

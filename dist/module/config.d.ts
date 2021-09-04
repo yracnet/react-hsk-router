@@ -10,6 +10,7 @@ export interface Item {
     container?: React.FC;
     notFound?: React.FC;
     notDefined?: React.FC;
+    wrapper?: React.FC;
     children?: Config;
     defaultTo?: string;
     [key: string]: any;
