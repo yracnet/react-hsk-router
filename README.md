@@ -22,6 +22,7 @@ export const routes = [
     { path: '/mission', title: 'Mission', component: MissionComponent }
 ]
 ```
+
 Esta declaracion se repite en otros directorios como:
 
 See [example/src/app/products/index.js](./example/src/app/products/index.js) as:
@@ -29,7 +30,6 @@ See [example/src/app/products/index.js](./example/src/app/products/index.js) as:
 See [example/src/app/services/index.js](./example/src/app/services/index.js) as:
 
 La ruta **path** es relativa al directorio.
-
 
 ### Componente de Navegacion
 
@@ -42,6 +42,7 @@ export const AboutComponent = (props) => (
                   defaultTo="/history" />
 )
 ```
+
 Este componente suprime la invocacion de Switch y Route de **react-router**
 
 Adicionalmente permite envolver los componentes definidos en **routers** con el componente **container**.
@@ -58,13 +59,7 @@ export const AboutComponent = (props) => (
 ```
 
 Tambien puede definir componentes comunes como:
+
 - **defaultTo**: Cuando la ruta no esta definida
 - **notFound**: Cuando la ruta no esta definida y tampoco el atributo **defaultTo**
 - **notDefined**: Cuando el atributo **component** no exista
-
-
-
-
-
-
-

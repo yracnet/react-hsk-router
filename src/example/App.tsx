@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
-import { nivel } from './routes'
-import { ItemRender } from '../module'
+import { nivel } from './routes';
+import { ItemRender } from '../module';
 
 function App() {
   return (
