@@ -1,4 +1,5 @@
 import React from 'react';
+import { matchPath, useLocation } from 'react-router-dom';
 
 export interface RelativeInstance {
   basename: string;
@@ -35,4 +36,10 @@ export const Relative = React.createContext<RelativeInstance>(NONE);
 
 export const useRelative = (): RelativeInstance => {
   return React.useContext(Relative);
+};
+
+export const useCurrent = (): RelativeCurrent | any => {
+  const { current } = React.useContext(Relative);
+  const { pathname } = useLocation();
+  return current.views.find((it) => matchPath(pathname, it.uri)) || {};
 };
