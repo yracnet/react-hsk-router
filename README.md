@@ -2,11 +2,15 @@
 
 Permite definir la estructura de navegacion de un proyecto basado en un objeto (routers)
 
+La navegacion es RELATIVA por lo cual puede crear modulos con navegacion de forma independiente y comodarlos a una ruta padre
+
+Proporciona hooks para el manejo de la navegacion y la obtener las cofiguracion realizadas
+
 ## Ejemplo
 
-Codigo ejemplo: [codigo](./example):
-
 Aplicacion ejemplo: [online](http://yracnet.github.io/react-hsk-router/):
+
+Codigo ejemplo: [codigo](./example):
 
 ## Configuracion basica
 
